@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\array\array.csproj" />
+    <ProjectReference Include="..\..\..\datastructures\array\array.csproj" />
   </ItemGroup>
 
 </Project>
