@@ -2,7 +2,7 @@ using DataStructures.Array;
 
 namespace ArrayTests;
 
-public class UnitTest1
+public class ArrayTests
 {
     [Fact]
     public void Check_Count_And_Capacity()
@@ -41,7 +41,7 @@ public class UnitTest1
         Assert.Equal(25, value);
     }
 
-    
+
 
 
 }
