@@ -1,67 +1,99 @@
-﻿namespace array
+﻿using DataStructures.Array.Contracts;
+
+namespace DataStructures.Array;
+
+public class Array<T> : StaticArray<T>, IDynamicArray<T>
 {
-    public class Array<T>
+    private int index = 0;
+
+    public int Count => index;
+
+    public int Capacity => Length;
+
+    public Array()
     {
-        private T[] _arr;
-        private int _index = 0;
 
-        public int Count { get => _index; }
-        public int Capacity { get => _arr.Length; }
+    }
 
-        public Array()
+    public Array(int size)
+    {
+        _innerArray = new T[size];
+    }
+
+    public void Add(T value)
+    {
+        CheckDoubleArray();
+        _innerArray[index] = value;
+        index++;
+    }
+
+    public T RemoveAt(int position)
+    {
+        if (position < 0 || position > Count - 1)
         {
-            _arr = new T[4];
+            throw new IndexOutOfRangeException();
         }
 
-        public Array(int size)
-        {
-            _arr = new T[size];
-        }
 
-        public Array(ICollection<T> values) : this()
-        {
-            foreach (T value in values)
-                Add(value);
-        }
+        var removedItem = _innerArray[position];
 
-        public void Add(T item)
-        {
-            if (Count == Capacity)
-                // throw new Exception("The array is full!");
-                _arr = DoubleArray(_arr);
-            _arr[_index] = item;
-            _index++;
-        }
+        _innerArray[position] = default;
 
-        public T FindAt(int index)
+        for (int i = position; i < Count - 1; i++)
         {
-            if (index >= Count)
-                throw new IndexOutOfRangeException("The index out of range!");
-            return _arr[index];
+            Swap(i, i + 1);
         }
+        index--;
+        ShrinkArray();
+        return removedItem;
+    }
 
-        private T[] DoubleArray(T[] arr)
+    public void Swap(int position1, int position2)
+    {
+        var temp = _innerArray[position1];
+        _innerArray[position1] = _innerArray[position2];
+        _innerArray[position2] = temp;
+    }
+
+    public T GetValue(int position)
+    {
+        // throw new NotImplementedException();
+        if (position < 0 || position >= _innerArray.Length)
+            throw new IndexOutOfRangeException();
+        return _innerArray[position];
+    }
+
+    public void SetValue(T value, int position)
+    {
+        if (position < 0 || position >= _innerArray.Length)
+            throw new IndexOutOfRangeException();
+        _innerArray[position] = value;
+    }
+
+    private void CheckDoubleArray()
+    {
+        //if (Count.Equals(Capacity))
+        if (index.Equals(_innerArray.Length))
         {
-            T[] new_array = new T[arr.Length * 2];
+            var newArray = new T[_innerArray.Length * 2];
+            for (int i = 0; i < _innerArray.Length; i++)
+            {
+                newArray[i] = _innerArray[i];
+            }
+            _innerArray = newArray;
+        }
+    }
+
+    private void ShrinkArray()
+    {
+        if (Count <= Capacity / 4)
+        {
+            var newArray = new T[Capacity / 2];
             for (int i = 0; i < Count; i++)
-                new_array[i] = arr[i];
-            return new_array;
-        }
-
-        public T Remove()
-        {
-            if (Count == 0)
-                //throw new Exception("The array is empty");
-                _arr = HalfArray(_arr);
-            var item = _arr[_index - 1];
-            _arr[_index - 1] = default(T);
-            _index--;
-            return item;
-        }
-
-        private T[] HalfArray(T[] arr)
-        {
-            throw new NotImplementedException();
+            {
+                newArray[i] = _innerArray[i];
+            }
+            _innerArray = newArray;
         }
     }
 }
