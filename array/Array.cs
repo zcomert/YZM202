@@ -10,6 +10,8 @@ public class Array<T> : StaticArray<T>, IDynamicArray<T>
 
     public int Capacity => Length;
 
+    public T this[int index] => GetValue(index);
+
     public Array()
     {
 
