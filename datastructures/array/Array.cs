@@ -22,11 +22,29 @@ public class Array<T> : StaticArray<T>, IDynamicArray<T>
         _innerArray = new T[size];
     }
 
+    public Array(ICollection<T> items)
+        : this()
+    {
+        foreach (var item in items)
+        {
+            Add(item);
+        }
+    }
+
     public void Add(T value)
     {
         CheckDoubleArray();
         _innerArray[index] = value;
         index++;
+    }
+
+    public T? Remove()
+    {
+        var removedItem = _innerArray[index - 1];
+        _innerArray[index - 1] = default;
+        index--;
+        ShrinkArray();
+        return removedItem;
     }
 
     public T RemoveAt(int position)
@@ -55,6 +73,12 @@ public class Array<T> : StaticArray<T>, IDynamicArray<T>
         var temp = _innerArray[position1];
         _innerArray[position1] = _innerArray[position2];
         _innerArray[position2] = temp;
+    }
+
+    public T[] Sort()
+    {
+        System.Array.Sort<T>(_innerArray, 0, index);
+        return _innerArray;
     }
 
     public T GetValue(int position)

@@ -41,7 +41,42 @@ public class ArrayTests
         Assert.Equal(25, value);
     }
 
+    [Fact]
+    public void RemoveAt_Test()
+    {
+        // Arrange
+        var numbers = new Array<int>(new int[] { 0, 1, 2, 3, 4 });
 
+        // Act
+        var item = numbers.RemoveAt(1);
 
+        // Assertion
+        Assert.Equal(1, item);
+        Assert.True(numbers.Count == 4);
+        Assert.Equal(2, numbers.RemoveAt(1));
+    }
 
+    [Fact]
+    public void Remove_Test()
+    {
+        var numbers = new Array<int>(new int[] { 0, 1, 2, 3, 4 });
+
+        // Act
+        var item = numbers.Remove();
+
+        // Assertion
+        Assert.Equal(4, item);
+        Assert.True(numbers.Count == 4);
+        Assert.Equal(3, numbers.Remove());
+    }
+
+    [Fact]
+    public void Sort_Test()
+    {
+        var numbers = new Array<int>(new int[] { 1, 3, 2, 5, 4 });
+
+        numbers.Sort();
+
+        Assert.Equal(2, numbers.GetItem(1));
+    }
 }
