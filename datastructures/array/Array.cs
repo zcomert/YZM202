@@ -22,13 +22,10 @@ public class Array<T> : StaticArray<T>, IDynamicArray<T>
         _innerArray = new T[size];
     }
 
-    public Array(ICollection<T> items)
+    public Array(IEnumerable<T> items)
         : this()
     {
-        foreach (var item in items)
-        {
-            Add(item);
-        }
+        AddRange(items);
     }
 
     public void Add(T value)
@@ -36,6 +33,14 @@ public class Array<T> : StaticArray<T>, IDynamicArray<T>
         CheckDoubleArray();
         _innerArray[index] = value;
         index++;
+    }
+
+    public void AddRange(IEnumerable<T> items)
+    {
+        foreach (var item in items)
+        {
+            Add(item);
+        }
     }
 
     public T? Remove()
@@ -73,6 +78,22 @@ public class Array<T> : StaticArray<T>, IDynamicArray<T>
         var temp = _innerArray[position1];
         _innerArray[position1] = _innerArray[position2];
         _innerArray[position2] = temp;
+    }
+
+    public void Concat(ICollection<T> arr)
+    {
+        AddRange(arr);
+        /*
+        var newArray = new T[Capacity + arr.ToList().Capacity];
+        for (int i = 0; i < Count; i++)
+            newArray[i] = _innerArray[i];
+        int j = Count;
+        for (int i = 0; i < arr.Count; i++)
+        {
+            newArray[j] = arr.ElementAt(i);
+            j++;
+        }
+        _innerArray = newArray;*/
     }
 
     public T[] Sort()
