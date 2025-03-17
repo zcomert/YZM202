@@ -59,6 +59,28 @@ public class SinglyLinkedListTests
     {
         Assert.Throws<Exception>(() => linkedList.AddAfter(new SinglyLinkedListNode<int>(5), 1));
     }
+    [Fact]
+    public void AddAfterNullCheck()
+    {
+        //Arrange
+        var linkedList = new SinglyLinkedList<int>();
+        var head_node = linkedList.Head;
+        //Act
+        linkedList.AddAfter(head_node, 9);
+        //Assert
+        Assert.Equal(9, linkedList.Head.Value);
+    }
+    [Fact]
+    public void AddAfterAddsElementsToLinkedList()
+    {
+        //Arrange
+        var node2 = linkedList.Head.Next;
+        //Act
+        linkedList.AddAfter(node2, 8);
+        //Assert
+        Assert.Equal(8, linkedList.Head.Next.Next.Value);
+        Assert.Equal(4, linkedList.Count);
+    }
 
     [Fact]
     public void AddBeforeAddsElementBeforeGivenNode()
@@ -75,11 +97,33 @@ public class SinglyLinkedListTests
         Assert.Equal(2, item.Next.Next.Value);
         Assert.Equal(1, item.Next.Next.Next.Value);
     }
+    [Fact]
+    public void AddBeforeNullCheck()
+    {
+        //Arrange
+        var linkedList = new SinglyLinkedList<int>();
+        var head_node = linkedList.Head;
+        //Act
+        linkedList.AddBefore(head_node, 6);
+        //Assert
+        Assert.Equal(6, linkedList.Head.Value);
+    }
 
     [Fact]
     public void AddBeforeThrowsExceptionIfNodeNotFound()
     {
         Assert.Throws<Exception>(() => linkedList.AddBefore(new SinglyLinkedListNode<int>(5), 1));
+    }
+
+    [Fact]
+    public void RemoveNullCheck()
+    {
+        //Arrange
+        var linkedList = new SinglyLinkedList<int>();
+        //Act
+        var head_node = linkedList.Head;
+        //Assert
+        Assert.Throws<Exception>(() => linkedList.Remove(head_node));
     }
 
     [Fact]
