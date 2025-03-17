@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "linkedlist", "datastructure
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "linkedListTests", "tests\datastructures\linkedListTests\linkedListTests.csproj", "{2CC6B202-3D04-4485-B0D3-771345E27F1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListApp", "applications\LinkedListApp\LinkedListApp.csproj", "{43F11A7A-3B05-48BE-A4E4-88C7087B552C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{2CC6B202-3D04-4485-B0D3-771345E27F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CC6B202-3D04-4485-B0D3-771345E27F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CC6B202-3D04-4485-B0D3-771345E27F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43F11A7A-3B05-48BE-A4E4-88C7087B552C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F11A7A-3B05-48BE-A4E4-88C7087B552C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F11A7A-3B05-48BE-A4E4-88C7087B552C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F11A7A-3B05-48BE-A4E4-88C7087B552C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +131,7 @@ Global
 		{4A9A7160-FCF1-44A7-B09A-DFCA917C3AAF} = {317058F8-8E04-49A7-8A64-5734B1CCD7C1}
 		{1E979018-3918-42C6-8DA2-5497DEB7C659} = {C75378EF-0AC3-4EEC-977E-E002EC2288E3}
 		{2CC6B202-3D04-4485-B0D3-771345E27F1C} = {0590F641-87E7-42D8-B4EA-4F4083E27027}
+		{43F11A7A-3B05-48BE-A4E4-88C7087B552C} = {2988E661-2056-4560-8BEE-BD02B2D83B34}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E9ECC0C-2C51-44E4-96C9-8ACA1029875D}
