@@ -111,15 +111,14 @@ public class SinglyLinkedList<T> : ISinglyLinkedList<T>, IEnumerable<T>
             return;
         }
 
-        /*
         var current = Head;
         while (current.Next != null){
             current = current.Next;
         }
         current.Next = node;
         _count++;
-        */
 
+        /*
         // Son elemana kadar git
         var current = Head;
         var prev = current;
@@ -131,6 +130,7 @@ public class SinglyLinkedList<T> : ISinglyLinkedList<T>, IEnumerable<T>
         prev.Next = node;
         _count++;
         return;
+        */
     }
 
     public T Remove(SinglyLinkedListNode<T> node)
@@ -188,6 +188,17 @@ public class SinglyLinkedList<T> : ISinglyLinkedList<T>, IEnumerable<T>
             return item;
         }
 
+        while (current.Next.Next != null)
+        {
+            current = current.Next;
+        }
+
+        var value = current.Next.Value;
+        current.Next = null;
+        _count--;
+        return value;
+
+        /*
         while (current is not null)
         {
             if (current.Next.Next is null)
@@ -200,7 +211,7 @@ public class SinglyLinkedList<T> : ISinglyLinkedList<T>, IEnumerable<T>
 
             current = current.Next;
         }
-
+        */
         throw new Exception();
     }
 

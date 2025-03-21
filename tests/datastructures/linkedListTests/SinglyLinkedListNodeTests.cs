@@ -69,4 +69,16 @@ public class SinglyLinkedListNodeTests
         var node = new SinglyLinkedListNode<double>(10.5);
         Assert.Equal("10,5", node.ToString());
     }
+
+    [Fact]
+    public void new_AddNode_Test()
+    {
+        var node = new SinglyLinkedListNode<int>(5);
+        var node2 = new SinglyLinkedListNode<int>(15);
+
+        node.Next = node2;
+
+        Assert.Equal("5", node.ToString());
+        Assert.Equal("15", node.Next.ToString());
+    }
 }

@@ -4,7 +4,7 @@ namespace DataStructures.LinkedList.Singly;
 
 public class SinglyLinkedListEnumerator<T> : IEnumerator<T>
 {
-    // Auto-implemented proerty
+    // Auto-implemented property
     public SinglyLinkedListNode<T>? Head { get; set; }
     public SinglyLinkedListNode<T>? Curr { get; set; }
 

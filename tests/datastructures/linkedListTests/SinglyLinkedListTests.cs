@@ -13,6 +13,63 @@ public class SinglyLinkedListTests
     }
 
     [Fact]
+    public void AddFirst_Test()
+    {
+        var node = new SinglyLinkedListNode<int>(15);
+
+        node.Next = linkedList.Head;
+        linkedList.Head = node;
+
+        Assert.Equal(15, linkedList.Head.Value);
+        Assert.Equal(3, linkedList.Head.Next.Value);
+        Assert.Equal(3, node.Next.Value);
+    }
+
+    [Fact]
+    public void AddLast_Test()
+    {
+        var node = new SinglyLinkedListNode<int>(15);
+        var temp = linkedList.Head;
+
+        while(temp.Next != null)
+        {
+            temp = temp.Next;
+        }
+        temp.Next = node;
+
+        Assert.Equal(15, temp.Next.Value);   
+    }
+
+    [Fact]
+    public void RemoveLast_Test()
+    {
+        var value = linkedList.RemoveLast();
+
+        Assert.Equal(1, value);
+        Assert.Equal(2, linkedList.Count);
+    }
+
+    [Fact]
+    public void AddAfter_Test()
+    {
+        var node = new SinglyLinkedListNode<int>(2);
+        var temp = linkedList.Head;
+        linkedList.AddAfter(node, 15);
+
+        Assert.Equal(15, linkedList.Head.Next.Next.Value);
+    }
+
+    [Fact]
+    public void AddBefore_Test()
+    {
+        var node = new SinglyLinkedListNode<int>(2);
+        var temp = linkedList.Head;
+        linkedList.AddBefore(temp.Next, 15);
+
+        Assert.Equal(15, linkedList.Head.Next.Value);
+    }
+
+    [Fact]
     public void NewLinkedListIsEmpty()
     {
         // Assert
