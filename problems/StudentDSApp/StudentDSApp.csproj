@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\datastructures\array\array.csproj" />
-    <ProjectReference Include="..\datastructures\linkedlist\linkedlist.csproj" />
-    <ProjectReference Include="..\libs\companyClassLibrary\companyClassLibrary.csproj" />
+    <ProjectReference Include="..\..\datastructures\array\array.csproj" />
+    <ProjectReference Include="..\..\datastructures\linkedlist\linkedlist.csproj" />
+    <ProjectReference Include="..\..\libs\schoolClassLibrary\schoolClassLibrary.csproj" />
   </ItemGroup>
 
 </Project>
