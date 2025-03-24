@@ -5,6 +5,62 @@ namespace Tests.LinkedListTests
     public class DoublyLinkedListTests
     {
         [Fact]
+        public void AddFirst_Test()
+        {
+            var node = new DbNode<char>('z');
+            var dbList = new DoublyLinkedList<char>(
+                new char[] { 'a', 'b', 'c' }
+                );
+
+            dbList.Head.Prev = node;
+            node.Next = dbList.Head;
+            dbList.Head = node;
+
+            Assert.Equal('z', dbList.Head.Value);
+            Assert.Equal('a', node.Next.Value);
+        }
+
+        [Fact]
+        public void AddLast_Test()
+        {
+            var node = new DbNode<char>('z');
+            var dbList = new DoublyLinkedList<char>(
+                new char[] { 'a', 'b', 'c' }
+                );
+
+            dbList.Tail.Next = node;
+            node.Prev = dbList.Tail;
+            dbList.Tail = node;
+
+            Assert.Equal(node, dbList.Tail);
+            Assert.Equal('c', dbList.Tail.Prev.Value);
+        }
+
+        [Fact]
+        public void AddAfter_Test()
+        {
+            var dbList = new DoublyLinkedList<char>(
+                new char[] { 'a', 'b', 'c' }
+                );
+
+            dbList.AddAfter(dbList.Head.Next, 'z');
+
+            Assert.Equal('z', dbList.Head.Next.Next.Value);
+        }
+
+        [Fact]
+        public void AddBefore_Test()
+        {
+            var dbList = new DoublyLinkedList<float>(
+                    new float[] { 1.1f, 2.2f, 3.3f }
+                );
+
+            dbList.AddBefore(dbList.Head.Next, 10.10f);
+
+            Assert.Equal(10.10f, dbList.Head.Next.Value);
+        }
+
+        [Fact]
         public void Constructor_Default_HeadAndTailAreNull()
         {
             var linked = new DoublyLinkedList<String>();
@@ -96,6 +152,31 @@ namespace Tests.LinkedListTests
 
             Assert.True(item.Equals('o'));
             Assert.True(item2.Equals('l'));
+        }
+
+        [Fact]
+        public void Remove_MultiItem_Test()
+        {
+            var dbList = new DoublyLinkedList<float>(
+                new float[] {1.1f, 2.2f, 3.3f}
+                );
+
+            var item = dbList.Remove(dbList.Head.Next);
+
+            Assert.Equal(2.2f, item);
+            Assert.Equal(3.3f, dbList.Head.Next.Value);
+        }
+
+        [Fact]
+        public void Remove_SingleItem_Test()
+        {
+            var dbList = new DoublyLinkedList<float>(
+                new float[] { 1.1f }
+                );
+
+            var item = dbList.Remove(dbList.Head);
+
+            Assert.Equal(1.1f, item);
         }
     }
 }
