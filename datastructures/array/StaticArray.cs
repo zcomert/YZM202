@@ -6,9 +6,10 @@ namespace DataStructures.Array;
 public class StaticArray<T> : IArray<T>, IEnumerable
 {
     protected T[] _innerArray;
-    public StaticArray()
+
+    public StaticArray(int size=4)
     {
-        _innerArray = new T[4];
+        _innerArray = new T[size];
     }
 
     public StaticArray(IEnumerable<T> collection)

@@ -136,6 +136,7 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>, IEnumerable<T>
             item = Head.Value;
             Head = null;
             Tail = null;
+            isHeadNull = true;
             return item;
         }
 
@@ -155,6 +156,7 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>, IEnumerable<T>
             T item2 = Head.Value;
             Head = null;
             Tail = null;
+            isHeadNull = true;
             return item2;
         }
 
