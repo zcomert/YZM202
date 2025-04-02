@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CompanyClassLibrary
+﻿namespace CompanyClassLibrary
 {
     public struct Department
     {
         public int Id { get; set; }
-        public String Name { get; set; }
-        public String Email { get; set; }
+        public String? Name { get; set; }
+        public String? Email { get; set; }
         public int Password { get; set; }
 
         public Department()

@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SchoolClassLibrary
+﻿namespace SchoolClassLibrary
 {
     public struct Teacher
     {
         public int TeacherId { get; set; }
-        public String FirstName { get; set; }
-        public String LastName { get; set; }
+        public String? FirstName { get; set; }
+        public String? LastName { get; set; }
         public String FullName { get => FirstName + " " + LastName; }
 
         public int Password { get; set; }

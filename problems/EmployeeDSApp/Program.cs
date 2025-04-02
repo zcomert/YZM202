@@ -29,4 +29,4 @@ while (temp != null)
     count++;
 }
 
-Console.WriteLine("Linked List Employee 3: " + temp.Value.FullName);
+Console.WriteLine("Linked List Employee 3: " + temp?.Value?.FullName);

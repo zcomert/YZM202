@@ -1,6 +1,7 @@
 using DataStructures.LinkedList.Singly;
+using linkedlist.Singly;
 
-namespace Tests.LinkedListTests;
+namespace linkedListTests;
 
 public class SinglyLinkedListTests
 {
@@ -9,7 +10,7 @@ public class SinglyLinkedListTests
 
     public SinglyLinkedListTests()
     {
-        this.linkedList = new SinglyLinkedList<int>(new int[] { 1, 2, 3 });
+        linkedList = new SinglyLinkedList<int>([1, 2, 3]);
     }
 
     [Fact]
@@ -21,8 +22,8 @@ public class SinglyLinkedListTests
         linkedList.Head = node;
 
         Assert.Equal(15, linkedList.Head.Value);
-        Assert.Equal(3, linkedList.Head.Next.Value);
-        Assert.Equal(3, node.Next.Value);
+        Assert.Equal(3, linkedList.Head?.Next?.Value);
+        Assert.Equal(3, node.Next?.Value);
     }
 
     [Fact]
@@ -31,13 +32,15 @@ public class SinglyLinkedListTests
         var node = new SinglyLinkedListNode<int>(15);
         var temp = linkedList.Head;
 
-        while(temp.Next != null)
+        while (temp?.Next != null)
         {
             temp = temp.Next;
         }
-        temp.Next = node;
 
-        Assert.Equal(15, temp.Next.Value);   
+        if (temp is not null)
+            temp.Next = node;
+
+        Assert.Equal(15, temp?.Next.Value);
     }
 
     [Fact]
@@ -56,17 +59,18 @@ public class SinglyLinkedListTests
         var temp = linkedList.Head;
         linkedList.AddAfter(node, 15);
 
-        Assert.Equal(15, linkedList.Head.Next.Next.Value);
+        Assert.Equal(15, linkedList.Head?.Next?.Next?.Value);
     }
 
     [Fact]
     public void AddBefore_Test()
     {
-        var node = new SinglyLinkedListNode<int>(2);
         var temp = linkedList.Head;
-        linkedList.AddBefore(temp.Next, 15);
 
-        Assert.Equal(15, linkedList.Head.Next.Value);
+        if (temp?.Next is not null)
+            linkedList.AddBefore(temp.Next, 15);
+
+        Assert.Equal(15, linkedList.Head?.Next?.Value);
     }
 
     [Fact]
@@ -80,14 +84,14 @@ public class SinglyLinkedListTests
     public void LinkedListWithCollectionIsPopulated()
     {
         // Arrange
-        int[] arr = new int[] { 1, 2, 3, 4, 5, 6 };
+        int[] arr = [1, 2, 3, 4, 5, 6];
 
         // Act
         linkedList = new SinglyLinkedList<int>(arr);
 
         // Assert
         Assert.False(linkedList.IsEmpty);
-        Assert.Equal(6, linkedList.Head.Value);
+        Assert.Equal(6, linkedList.Head?.Value);
     }
 
     [Fact]
@@ -95,8 +99,8 @@ public class SinglyLinkedListTests
     {
         linkedList.AddFirst(6);
 
-        Assert.Equal(6, linkedList.Head.Value);
-        Assert.Equal(3, linkedList.Head.Next.Value);
+        Assert.Equal(6, linkedList.Head?.Value);
+        Assert.Equal(3, linkedList.Head?.Next?.Value);
         Assert.Equal(4, linkedList.Count);
     }
 
@@ -105,8 +109,8 @@ public class SinglyLinkedListTests
     {
         linkedList.AddLast(6);
 
-        Assert.Equal(6, linkedList.Head.Next.Next.Next.Value);
-        Assert.Equal(3, linkedList.Head.Value);
+        Assert.Equal(6, linkedList.Head?.Next?.Next?.Next?.Value);
+        Assert.Equal(3, linkedList.Head?.Value);
         Assert.Equal(4, linkedList.Count);
     }
 
@@ -123,19 +127,21 @@ public class SinglyLinkedListTests
         var linkedList = new SinglyLinkedList<int>();
         var head_node = linkedList.Head;
         //Act
-        linkedList.AddAfter(head_node, 9);
+        if (head_node is not null)
+            linkedList.AddAfter(head_node, 9);
         //Assert
-        Assert.Equal(9, linkedList.Head.Value);
+        Assert.Equal(9, linkedList.Head?.Value);
     }
     [Fact]
     public void AddAfterAddsElementsToLinkedList()
     {
         //Arrange
-        var node2 = linkedList.Head.Next;
+        var node2 = linkedList.Head?.Next;
         //Act
-        linkedList.AddAfter(node2, 8);
+        if (node2 is not null)
+            linkedList.AddAfter(node2, 8);
         //Assert
-        Assert.Equal(8, linkedList.Head.Next.Next.Value);
+        Assert.Equal(8, linkedList.Head?.Next?.Next?.Value);
         Assert.Equal(4, linkedList.Count);
     }
 
@@ -146,13 +152,14 @@ public class SinglyLinkedListTests
         var item = linkedList.Head;
 
         // Act
-        linkedList.AddBefore(linkedList.Head.Next, 8);
+        if (linkedList.Head?.Next is not null)
+            linkedList.AddBefore(linkedList.Head.Next, 8);
         // Assert
 
-        Assert.Equal(3, item.Value);
-        Assert.Equal(8, item.Next.Value);
-        Assert.Equal(2, item.Next.Next.Value);
-        Assert.Equal(1, item.Next.Next.Next.Value);
+        Assert.Equal(3, item?.Value);
+        Assert.Equal(8, item?.Next?.Value);
+        Assert.Equal(2, item?.Next?.Next?.Value);
+        Assert.Equal(1, item?.Next?.Next?.Next?.Value);
     }
     [Fact]
     public void AddBeforeNullCheck()
@@ -161,9 +168,10 @@ public class SinglyLinkedListTests
         var linkedList = new SinglyLinkedList<int>();
         var head_node = linkedList.Head;
         //Act
-        linkedList.AddBefore(head_node, 6);
+        if (head_node is not null)
+            linkedList.AddBefore(head_node, 6);
         //Assert
-        Assert.Equal(6, linkedList.Head.Value);
+        Assert.Equal(6, linkedList.Head?.Value);
     }
 
     [Fact]
@@ -180,7 +188,8 @@ public class SinglyLinkedListTests
         //Act
         var head_node = linkedList.Head;
         //Assert
-        Assert.Throws<Exception>(() => linkedList.Remove(head_node));
+        if (head_node is not null)
+            Assert.Throws<Exception>(() => linkedList.Remove(head_node));
     }
 
     [Fact]
