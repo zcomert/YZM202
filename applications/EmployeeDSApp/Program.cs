@@ -2,21 +2,21 @@
 using DataStructures.Array;
 using DataStructures.LinkedList.Singly;
 
-var empArray = new Array<Employee>(new List<Employee>()
-{
-    new Employee(0, "Ali","Veli"),
-    new Employee(1, "Mehmet","Sahin"),
-    new Employee(2, "Onur","Kamil")
-});
+var empArray = new Array<Employee>(
+[
+    new(0, "Ali","Veli"),
+    new(1, "Mehmet","Sahin"),
+    new(2, "Onur","Kamil")
+]);
 
 Console.WriteLine("Array Employee 3: " + empArray[2].FullName);
 
-var linkedlistEmployee = new SinglyLinkedList<Employee>(new List<Employee>()
-{
-    new Employee(0, "Ali","Veli"),
-    new Employee(1, "Mehmet","Sahin"),
-    new Employee(2, "Onur","Kamil")
-});
+var linkedlistEmployee = new SinglyLinkedList<Employee>(
+[
+    new(0, "Ali","Veli"),
+    new(1, "Mehmet","Sahin"),
+    new(2, "Onur","Kamil")
+]);
 
 var temp = linkedlistEmployee.Head;
 var count = 0;
