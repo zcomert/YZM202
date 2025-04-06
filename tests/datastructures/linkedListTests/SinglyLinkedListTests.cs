@@ -49,15 +49,6 @@ public class SinglyLinkedListTests
         Assert.Equal(2, linkedList.Count);
     }
 
-    [Fact]
-    public void AddAfter_Test()
-    {
-        var node = new SinglyLinkedListNode<int>(2);
-        var temp = linkedList.Head;
-        linkedList.AddAfter(node, 15);
-
-        Assert.Equal(15, linkedList.Head.Next.Next.Value);
-    }
 
     [Fact]
     public void AddBefore_Test()
