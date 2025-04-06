@@ -1,0 +1,57 @@
+@startuml
+title Stack
+
+namespace DataStructures.Stack.Contract {
+    interface IStack<T> {
+        +Count:int
+        +Push(item: T):void
+        +Pop():T
+        +Peek():T
+    }
+}
+
+namespace DataStructures.Stack {
+    class ArrayStack<T> {
+        -_innerArray: List<T>
+        -LastIndex: int
+        +ArrayStack()
+        +ArrayStack(collection: IEnumerable<T>)
+        +Count:int
+        +Peek():T
+        +Pop():T
+        +Push(item: T):void
+    }
+
+    class LinkedListStack<T> {
+        -_innerList: SinglyLinkedList<T>
+        +LinkedListStack()
+        +LinkedListStack(collection: IEnumerable<T>)
+        +Count:int
+        +Peek():T
+        +Pop():T
+        +Push(item: T):void
+    }
+
+    
+
+    class Stack<T> {
+        -_stack: IStack<T> 
+        +Stack()
+        +Count:int
+        +Peek():T
+        +Pop():T
+        +Push(item: T):void
+    }
+
+    note "Stack<T> has-an-<b>IStack<T></b>" as n1
+    n1 .. Stack
+}
+
+
+DataStructures.Stack.ArrayStack .left.|> DataStructures.Stack.Contract.IStack : "<<implements>>"
+DataStructures.Stack.LinkedListStack ..|> DataStructures.Stack.Contract.IStack : "<<implements>>"
+DataStructures.Stack.Stack .down.|> DataStructures.Stack.Contract.IStack : "<<implements>>"
+
+hide empty members
+
+@enduml

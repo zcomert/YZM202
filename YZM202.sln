@@ -57,6 +57,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrowserApp", "BrowserApp\Br
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabsLibrary", "TabsLibrary\TabsLibrary.csproj", "{5708736D-1BCC-4356-A666-6D6D02009180}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stack", "datastructures\stack\stack.csproj", "{DB6BDE84-18D1-4CA0-93BC-C2FB111014C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{5708736D-1BCC-4356-A666-6D6D02009180}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5708736D-1BCC-4356-A666-6D6D02009180}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5708736D-1BCC-4356-A666-6D6D02009180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB6BDE84-18D1-4CA0-93BC-C2FB111014C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6BDE84-18D1-4CA0-93BC-C2FB111014C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6BDE84-18D1-4CA0-93BC-C2FB111014C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6BDE84-18D1-4CA0-93BC-C2FB111014C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -174,6 +180,7 @@ Global
 		{7A7AAB1B-0FE2-406E-B5A1-5FBABB678131} = {82A3FA7D-B206-461F-A4B5-46FFBA8CE0E7}
 		{CE38FB3F-7E57-41FE-BFC7-A8AA7156FC29} = {317058F8-8E04-49A7-8A64-5734B1CCD7C1}
 		{5708736D-1BCC-4356-A666-6D6D02009180} = {82A3FA7D-B206-461F-A4B5-46FFBA8CE0E7}
+		{DB6BDE84-18D1-4CA0-93BC-C2FB111014C7} = {C75378EF-0AC3-4EEC-977E-E002EC2288E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E9ECC0C-2C51-44E4-96C9-8ACA1029875D}
