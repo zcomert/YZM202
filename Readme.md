@@ -25,3 +25,31 @@
 4. **Memory Management in Singly Linked Lists** - How nodes are dynamically allocated and deallocated.  
 5. **Application Areas of Singly Linked Lists** - Practical uses in software development, such as queue implementations, undo features, and memory-efficient data storage.  
 
+## 4. Stack  
+1. **Introduction and Basic Concepts**  
+   - Understanding the LIFO (Last-In, First-Out) principle that defines a stack.  
+   - Real-world analogies like a stack of plates or books.  
+   - Importance in algorithm design and memory management.
+
+2. **Stack Structure**  
+   - Explanation of the internal structure of a stack.  
+   - Common implementations using arrays and linked lists.  
+   - Core components: `push`, `pop`, `peek`, and `isEmpty` operations.
+
+3. **Stack Operations**  
+   - **Push** - Adding an element to the top of the stack.  
+   - **Pop** - Removing the top element from the stack.  
+   - **Peek (or Top)** - Viewing the top element without removing it.  
+   - **IsEmpty** - Checking if the stack is empty.  
+   - **Size** - Getting the number of elements in the stack.
+
+4. **Memory Management in Stack**  
+   - Stack memory allocation and deallocation.  
+   - Call stack usage during function execution.  
+   - Stack overflow issues and limitations in memory-constrained environments.
+
+5. **Application Areas of Stacks**  
+   - Function call management in programming languages (call stack).  
+   - Expression evaluation and syntax parsing.  
+   - Backtracking algorithms (e.g., maze solving, undo operations).  
+   - Depth-First Search (DFS) in graph traversal.  
