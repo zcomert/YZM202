@@ -6,7 +6,7 @@ class PostFixExample
 {
     public static int EvaluatePostfix(string expression)
     {
-        Stack<int> stack = new Stack<int>();
+        var stack = new DataStructures.Stack.Stack<int>();
 
         foreach (char ch in expression)
         {
