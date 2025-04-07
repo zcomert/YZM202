@@ -1,20 +1,15 @@
 ﻿using DataStructures.Array;
 using DataStructures.LinkedList.Doubly;
 using DataStructures.LinkedList.Singly;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MusicLibrary
 {
     public class MusicPlayer : IEnumerable
     {
-        private StaticArray<Music> arrayPlayer;
-        private SinglyLinkedList<Music> singlyPLayer;
-        private DoublyLinkedList<Music> doublyPLayer;
+        private readonly StaticArray<Music> arrayPlayer;
+        private readonly SinglyLinkedList<Music> singlyPLayer;
+        private readonly DoublyLinkedList<Music> doublyPLayer;
 
         private String Type { get; set; }
         private int _index = 0;

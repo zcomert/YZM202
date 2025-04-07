@@ -1,7 +1,7 @@
 
 using DataStructures.LinkedList.Doubly;
 
-namespace Tests.LinkedListTests;
+namespace linkedListTests;
 
 public class DbNodeTests
 {
@@ -19,7 +19,7 @@ public class DbNodeTests
         node2.Prev = node1;
 
         Assert.Equal(node1, node.Next);
-        Assert.Equal(null, node.Prev);
+        Assert.Null(node.Prev);
         Assert.True(node1.Next.Equals(node2));
         Assert.True(node.Next.Value.Equals(node2.Prev.Value));
     }
@@ -77,7 +77,7 @@ public class DbNodeTests
         node.Prev = new_node;
 
         // Assert.Equal(5, node.Prev.Next.Value); // node.Value
-        Assert.Throws<System.NullReferenceException>(() => node.Prev.Next.Value); // node.Value
+        Assert.Throws<NullReferenceException>(() => node.Prev?.Next?.Value); // node.Value
     }
 
     [Fact]
