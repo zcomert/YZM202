@@ -57,6 +57,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeDSApp", "applicatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentDSApp", "applications\StudentDSApp\StudentDSApp.csproj", "{F790BB40-F418-4C50-B161-80FB68B435F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stack", "datastructures\stack\stack.csproj", "{9CD4C831-7881-4142-9BD3-7E0507771FE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +153,10 @@ Global
 		{F790BB40-F418-4C50-B161-80FB68B435F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F790BB40-F418-4C50-B161-80FB68B435F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F790BB40-F418-4C50-B161-80FB68B435F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CD4C831-7881-4142-9BD3-7E0507771FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CD4C831-7881-4142-9BD3-7E0507771FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CD4C831-7881-4142-9BD3-7E0507771FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CD4C831-7881-4142-9BD3-7E0507771FE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -179,6 +185,7 @@ Global
 		{55DE4E71-8D38-49BB-B099-1134D82BF085} = {2988E661-2056-4560-8BEE-BD02B2D83B34}
 		{35576FEE-9F59-4D1C-A105-31AC14025D55} = {2988E661-2056-4560-8BEE-BD02B2D83B34}
 		{F790BB40-F418-4C50-B161-80FB68B435F6} = {2988E661-2056-4560-8BEE-BD02B2D83B34}
+		{9CD4C831-7881-4142-9BD3-7E0507771FE4} = {C75378EF-0AC3-4EEC-977E-E002EC2288E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E9ECC0C-2C51-44E4-96C9-8ACA1029875D}
