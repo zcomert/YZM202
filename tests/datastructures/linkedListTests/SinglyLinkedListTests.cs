@@ -1,5 +1,4 @@
 using DataStructures.LinkedList.Singly;
-using linkedlist.Singly;
 
 namespace linkedListTests;
 
@@ -65,12 +64,11 @@ public class SinglyLinkedListTests
     [Fact]
     public void AddBefore_Test()
     {
+        var node = new SinglyLinkedListNode<int>(2);
         var temp = linkedList.Head;
+        linkedList.AddBefore(temp.Next, 15);
 
-        if (temp?.Next is not null)
-            linkedList.AddBefore(temp.Next, 15);
-
-        Assert.Equal(15, linkedList.Head?.Next?.Value);
+        Assert.Equal(15, linkedList.Head.Next.Value);
     }
 
     [Fact]
