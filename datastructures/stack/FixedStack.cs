@@ -26,6 +26,7 @@ public class FixedStack<T> : IStack<T>
             throw new InvalidOperationException("Stack is empty");
 
         T temp = _innerArray[index-1];
+        _innerArray[index - 1] = default;
         index--;
         return temp;
     }
