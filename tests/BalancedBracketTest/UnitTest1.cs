@@ -10,7 +10,10 @@ public class UnitTest1
     [InlineData("{({})}", true)]
     public void Test1(string input, bool expected)
     {
+        //Act
         var result = BalancedParenthesesWithStack.BalancedBracketChecker.CheckBalanced(input);
+
+        //Assert
         Assert.Equal(expected, result);
     }
 }
