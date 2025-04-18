@@ -32,18 +32,18 @@ namespace DataStructures.LinkedList.Doubly
 
         public bool MoveNext()
         {
-            if (Head is null)
+            if (Head is null) // Tail is null
                 return false;
 
             if (Curr is null)
             {
-                Curr = Head;
+                Curr = Head; // Curr = Tail;
                 return true;
             }
 
             if (Curr.Next is not null)
             {
-                Curr = Curr.Next;
+                Curr = Curr.Next; // Curr = Curr.Prev;
                 return true;
             }
 
