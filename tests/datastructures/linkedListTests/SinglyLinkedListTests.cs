@@ -116,9 +116,12 @@ public class SinglyLinkedListTests
         var head_node = linkedList.Head;
         //Act
         if (head_node is not null)
+        {
             linkedList.AddAfter(head_node, 9);
-        //Assert
-        Assert.Equal(9, linkedList.Head?.Value);
+            //Assert
+            Assert.Equal(9, linkedList.Head?.Value);
+        }
+        Assert.Null(head_node);
     }
     [Fact]
     public void AddAfterAddsElementsToLinkedList()
@@ -157,9 +160,12 @@ public class SinglyLinkedListTests
         var head_node = linkedList.Head;
         //Act
         if (head_node is not null)
+        {
             linkedList.AddBefore(head_node, 6);
-        //Assert
-        Assert.Equal(6, linkedList.Head?.Value);
+            //Assert
+            Assert.Equal(6, linkedList.Head?.Value);
+        }
+        Assert.Null(head_node);
     }
 
     [Fact]

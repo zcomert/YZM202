@@ -75,9 +75,12 @@ public class DbNodeTests
         var new_node = new DbNode<int>(10);
 
         node.Prev = new_node;
+        new_node.Next = node;
 
-        // Assert.Equal(5, node.Prev.Next.Value); // node.Value
-        Assert.Throws<NullReferenceException>(() => node.Prev?.Next?.Value); // node.Value
+        Assert.NotNull(node.Prev);
+        Assert.NotNull(node.Prev.Next);
+        if (new_node.Prev is not null && new_node.Prev.Next is not null)
+            Assert.Equal(10, new_node.Prev.Next.Value);
     }
 
     [Fact]
