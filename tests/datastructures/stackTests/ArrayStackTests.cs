@@ -16,7 +16,7 @@ public class ArrayStackTests
         stack.Push(30); // 10 | 20 | 30
 
         // Assert
-        Assert.Equal(stack.Count, 3);
+        Assert.Equal(3, stack.Count);
     }
 
     [Fact]
@@ -32,7 +32,7 @@ public class ArrayStackTests
         var result = stack.Pop();
 
         // Assert
-        Assert.Equal(stack.Count, 2);
+        Assert.Equal(2, stack.Count);
         Assert.Equal(30, result);
     }
 
@@ -49,7 +49,7 @@ public class ArrayStackTests
         var result = stack.Peek();
 
         // Assert
-        Assert.Equal(stack.Count, 3);
+        Assert.Equal(3, stack.Count);
         Assert.Equal(30, result);
     }
 
@@ -57,10 +57,10 @@ public class ArrayStackTests
     public void ArrayStack_Constructor_IEnumerable_Test()
     {
         // Arrange & Act
-        var stack = new ArrayStack<int>(new List<int>() { 10,20,30});
-       
+        var stack = new ArrayStack<int>(new List<int>() { 10, 20, 30 });
+
         // Assert
-        Assert.Equal(stack.Count, 3);
-        Assert.Equal(stack.Peek(), 30);
+        Assert.Equal(3, stack.Count);
+        Assert.Equal(30, stack.Peek());
     }
 }

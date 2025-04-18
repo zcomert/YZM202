@@ -11,7 +11,7 @@ bool RepeatedItemCheckWithSort(Array<int> arr)
 
 bool RepeatedItemCheckWithSets(Array<int> arr)
 {
-    HashSet<int> sets = new HashSet<int>();
+    HashSet<int> sets = new();
     for (int i = 0; i < arr.Count; i++)
     {
         if (sets.Contains(arr.GetItem(i)))
@@ -21,7 +21,7 @@ bool RepeatedItemCheckWithSets(Array<int> arr)
     return false;
 }
 
-Array<int> array = new Array<int>(new int[] {0, 7, 1, 9, 5, 2, 2});
+Array<int> array = [.. new int[] { 0, 7, 1, 9, 5, 2, 2 }];
 
 Console.WriteLine("Output (Using Sort): " + RepeatedItemCheckWithSort(array));
 Console.WriteLine("Output (Using Set): " + RepeatedItemCheckWithSets(array));

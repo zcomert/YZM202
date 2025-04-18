@@ -1,5 +1,6 @@
 using System.Collections;
 using DataStructures.LinkedList.Contracts;
+
 namespace DataStructures.LinkedList.Doubly;
 
 public class DoublyLinkedList<T> : IDoublyLinkedList<T>, IEnumerable<T>
@@ -7,11 +8,11 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>, IEnumerable<T>
     public DbNode<T>? Head { get; set; }
     public DbNode<T>? Tail { get; set; }
 
-    private bool isHeadNull { get; set; }
+    private bool IsHeadNull { get; set; }
 
     public DoublyLinkedList()
     {
-        this.isHeadNull = true;
+        IsHeadNull = true;
     }
 
     public DoublyLinkedList(IEnumerable<T> collection) : this()
@@ -25,11 +26,11 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>, IEnumerable<T>
     public void AddFirst(T item)
     {
         var node = new DbNode<T>(item); // node oluşturuldu
-        if (isHeadNull) // Head null ise
+        if (IsHeadNull) // Head null ise
         {
             Head = node;
             Tail = node; // Tail = Head;
-            isHeadNull = false;
+            IsHeadNull = false;
             return; // Added! İşlem yapıldıktan sonra return ile kesilmelidir. 
         }
 
@@ -41,15 +42,16 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>, IEnumerable<T>
     public void AddLast(T item)
     {
         var node = new DbNode<T>(item);
-        if (isHeadNull)
+        if (IsHeadNull)
         {
             Head = node;
             Tail = node; // Tail = Head;
-            isHeadNull = false;
+            IsHeadNull = false;
             return; // Added! İşlem yapıldıktan sonra return ile kesilmelidir.
         }
 
-        Tail.Next = node;
+        if (Tail is not null)
+            Tail.Next = node;
         node.Prev = Tail;
         Tail = node;
     }
@@ -58,15 +60,15 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>, IEnumerable<T>
     {
         var newNode = new DbNode<T>(item);
 
-        if (isHeadNull)
+        if (IsHeadNull)
         {
             Head = newNode;
             Tail = newNode;
-            isHeadNull = false;
+            IsHeadNull = false;
             return;
         }
 
-        if (Tail.Equals(node))
+        if (Tail is not null && Tail.Equals(node))
         {
             AddLast(item);
             return;
@@ -91,17 +93,17 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>, IEnumerable<T>
 
     public T RemoveFirst()
     {
-        if (isHeadNull)
+        if (IsHeadNull)
             throw new Exception("The linked list is empty!");
 
-        T item = default;
+        T? item = default;
 
         if (Head.Equals(Tail))
         {
             item = Head.Value;
             Head = null;
             Tail = null;
-            isHeadNull = true;
+            IsHeadNull = true;
             return item;
         }
 
@@ -113,7 +115,7 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>, IEnumerable<T>
 
     public T RemoveLast()
     {
-        if (isHeadNull)
+        if (IsHeadNull)
             throw new Exception("The linked list is empty!");
 
         if (Head.Equals(Tail))
@@ -121,7 +123,7 @@ public class DoublyLinkedList<T> : IDoublyLinkedList<T>, IEnumerable<T>
             T item2 = Head.Value;
             Head = null;
             Tail = null;
-            isHeadNull = true;
+            IsHeadNull = true;
             return item2;
         }
 

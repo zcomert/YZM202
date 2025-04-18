@@ -1,6 +1,6 @@
 using DataStructures.LinkedList.Doubly;
 
-namespace Tests.LinkedListTests
+namespace linkedListTests
 {
     public class DoublyLinkedListTests
     {
@@ -10,14 +10,19 @@ namespace Tests.LinkedListTests
         {
             var node = new DbNode<char>('z');
             var dbList = new DoublyLinkedList<char>(
-                new char[] { 'a', 'b', 'c' }
+                ['a', 'b', 'c']
                 );
-            dbList.Head.Prev = node;
-            node.Next = dbList.Head;
+
+            if (dbList.Head is not null)
+            {
+                dbList.Head.Prev = node;
+                node.Next = dbList.Head;
+            }
+
             dbList.Head = node;
 
             Assert.Equal('z', dbList.Head.Value);
-            Assert.Equal('a', node.Next.Value);
+            Assert.Equal('a', node.Next?.Value);
         }
 
         [Fact]
@@ -25,35 +30,39 @@ namespace Tests.LinkedListTests
         {
             var node = new DbNode<char>('z');
             var dbList = new DoublyLinkedList<char>(
-                new char[] { 'a', 'b', 'c' }
+                ['a', 'b', 'c']
                 );
-            dbList.Tail.Next = node;
-            node.Prev = dbList.Tail;
+            if (dbList.Tail is not null)
+            {
+                dbList.Tail.Next = node;
+                node.Prev = dbList.Tail;
+            }
             dbList.Tail = node;
 
             Assert.Equal(node, dbList.Tail);
-            Assert.Equal('c', dbList.Tail.Prev.Value);
+            Assert.Equal('c', dbList.Tail?.Prev?.Value);
         }
 
         [Fact]
         public void AddAfter_Test()
         {
             var dbList = new DoublyLinkedList<char>(
-                new char[] { 'a', 'b', 'c' }
+                ['a', 'b', 'c']
                 );
 
-            dbList.AddAfter(dbList.Head.Next, 'z');
+            if (dbList.Head is not null && dbList.Head.Next is not null)
+                dbList.AddAfter(dbList.Head.Next, 'z');
 
-            Assert.Equal('z', dbList.Head.Next.Next.Value);
+            Assert.Equal('z', dbList.Head?.Next?.Next?.Value);
         }
 
         [Fact]
         public void Constructor_Default_HeadAndTailAreNull()
         {
-            var linked = new DoublyLinkedList<String>();
+            var linked = new DoublyLinkedList<string>();
 
-            Assert.Equal(null, linked.Head);
-            Assert.Equal(null, linked.Tail);
+            Assert.Null(linked.Head);
+            Assert.Null(linked.Tail);
         }
 
         [Fact]
@@ -61,8 +70,8 @@ namespace Tests.LinkedListTests
         {
             var linked = new DoublyLinkedList<char>("hello");
 
-            Assert.Equal('h', linked.Head.Value);
-            Assert.Equal('o', linked.Tail.Value);
+            Assert.Equal('h', linked.Head?.Value);
+            Assert.Equal('o', linked.Tail?.Value);
         }
 
         [Fact]
@@ -71,7 +80,7 @@ namespace Tests.LinkedListTests
             var linked = new DoublyLinkedList<char>();
             linked.AddFirst('a');
 
-            Assert.Equal('a', linked.Head.Value);
+            Assert.Equal('a', linked.Head?.Value);
         }
 
         [Fact]
@@ -80,7 +89,7 @@ namespace Tests.LinkedListTests
             var linked = new DoublyLinkedList<char>("hello");
             linked.AddFirst('a');
 
-            Assert.Equal('a', linked.Head.Value);
+            Assert.Equal('a', linked.Head?.Value);
         }
 
         [Fact]
@@ -89,7 +98,7 @@ namespace Tests.LinkedListTests
             var linked = new DoublyLinkedList<char>();
             linked.AddLast('a');
 
-            Assert.Equal('a', linked.Tail.Value);
+            Assert.Equal('a', linked.Tail?.Value);
         }
 
         [Fact]
@@ -98,7 +107,7 @@ namespace Tests.LinkedListTests
             var linked = new DoublyLinkedList<char>("hello");
             linked.AddLast('a');
 
-            Assert.Equal('a', linked.Tail.Value);
+            Assert.Equal('a', linked.Tail?.Value);
         }
 
         [Fact]

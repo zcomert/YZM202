@@ -1,6 +1,6 @@
 using DataStructures.LinkedList.Singly;
 
-namespace Tests.LinkedListTests;
+namespace linkedListTests;
 
 public class SinglyLinkedListNodeTests
 {
@@ -14,7 +14,7 @@ public class SinglyLinkedListNodeTests
         var item = node.Value;
 
         // Assert
-        Assert.Equal(null, item);
+        Assert.Null(item);
     }
 
     [Fact]
@@ -41,7 +41,7 @@ public class SinglyLinkedListNodeTests
         var node = new SinglyLinkedListNode<int>(2);
 
         // Assert
-        Assert.Equal(null, node.Next);
+        Assert.Null(node.Next);
     }
 
     [Fact]

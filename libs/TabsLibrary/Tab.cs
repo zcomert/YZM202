@@ -3,9 +3,9 @@
     public class Tab
     {
         public int Id { get; set; }
-        public String TabName { get; set; }
-        public String Title { get; set; }
-        public String Description { get; set; }
+        public String? TabName { get; set; }
+        public String? Title { get; set; }
+        public String? Description { get; set; }
         public DateTime CreatedTime { get; set; }
 
         public Tab()

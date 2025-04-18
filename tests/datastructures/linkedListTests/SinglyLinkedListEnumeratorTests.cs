@@ -1,7 +1,6 @@
 using DataStructures.LinkedList.Singly;
-using Xunit;
 
-namespace Tests.LinkedListTests;
+namespace linkedListTests;
 public class SinglyLinkedListEnumeratorTests
 {
     [Fact]
@@ -46,7 +45,7 @@ public class SinglyLinkedListEnumeratorTests
 
         // Assert
         Assert.Equal(1, item);
-        Assert.Equal(null, enumerator.Curr);
+        Assert.Null(enumerator.Curr);
     }
 
     [Fact]
@@ -84,6 +83,6 @@ public class SinglyLinkedListEnumeratorTests
         // Assert
         Assert.Equal(1, item);
         Assert.Equal(2, item2);
-        Assert.Equal(2, enumerator.Curr.Value);
+        Assert.Equal(2, enumerator.Curr?.Value);
     }
 }

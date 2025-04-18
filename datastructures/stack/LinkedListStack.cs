@@ -19,9 +19,8 @@ namespace DataStructures.Stack
             }
         }
 
-        public int Count => _innerList.Count; 
+        public int Count => _innerList.Count;
 
-       
         public T Peek()
         {
             return _innerList.Head is null
