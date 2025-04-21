@@ -7,6 +7,7 @@ public class UnitTest1
     [InlineData("[{]", false)]
     [InlineData("(())", true)]
     [InlineData("{}]}", false)]
+    [InlineData("}]}", false)]
     [InlineData("{({})}", true)]
     public void Test1(string input, bool expected)
     {
