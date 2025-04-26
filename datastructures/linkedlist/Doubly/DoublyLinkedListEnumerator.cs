@@ -1,60 +1,59 @@
 using System.Collections;
 
-namespace DataStructures.LinkedList.Doubly
+namespace DataStructures.LinkedList.Doubly;
+
+public class DbLinkedListEnumerator<T> : IEnumerator<T>
 {
-    public class DbLinkedListEnumerator<T> : IEnumerator<T>
+    private DbNode<T>? Head { get; set; }
+    private DbNode<T>? Tail { get; set; }
+    public DbNode<T>? Curr { get; set; }
+
+    public DbLinkedListEnumerator()
     {
-        private DbNode<T> Head { get; set; }
-        private DbNode<T> Tail { get; set; }
-        public DbNode<T> Curr { get; set; }
 
-        public DbLinkedListEnumerator()
-        {
+    }
 
-        }
+    public DbLinkedListEnumerator(DbNode<T>? head, DbNode<T>? tail)
+    {
+        Head = head;
+        Tail = tail;
+        Curr = null;
+    }
 
-        public DbLinkedListEnumerator(DbNode<T> head, DbNode<T> tail)
-        {
-            this.Head = head;
-            this.Tail = tail;
-            Curr = null;
-        }
+    public T Current => Curr is not null ? Curr.Value : default;
 
-        public T Current => Curr != null ? Curr.Value : default;
+    object? IEnumerator.Current => Current;
 
-        object IEnumerator.Current => Current;
+    public void Dispose()
+    {
+        Head = null;
+        Tail = null;
+    }
 
-        public void Dispose()
-        {
-            Head = null;
-            Tail = null;
-        }
-
-        public bool MoveNext()
-        {
-            if (Head is null) // Tail is null
-                return false;
-
-            if (Curr is null)
-            {
-                Curr = Head; // Curr = Tail;
-                return true;
-            }
-
-            if (Curr.Next is not null)
-            {
-                Curr = Curr.Next; // Curr = Curr.Prev;
-                return true;
-            }
-
+    public bool MoveNext()
+    {
+        if (Head is null)
             return false;
+
+        if (Curr is null)
+        {
+            Curr = Head;
+            return true;
         }
 
-        public void Reset()
+        if (Curr.Next is not null)
         {
-            Head = null;
-            Tail = null;
-            Curr = null;
+            Curr = Curr.Next;
+            return true;
         }
+
+        return false;
+    }
+
+    public void Reset()
+    {
+        Head = null;
+        Tail = null;
+        Curr = null;
     }
 }

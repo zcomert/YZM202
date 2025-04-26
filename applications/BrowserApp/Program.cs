@@ -36,7 +36,7 @@ while (true)
                     browser.GetTabById(int.Parse(Console.ReadLine()))
                     );
                 break;
-            
+
             case 0:
                 return;
 

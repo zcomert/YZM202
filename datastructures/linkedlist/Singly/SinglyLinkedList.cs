@@ -112,7 +112,8 @@ public class SinglyLinkedList<T> : ISinglyLinkedList<T>, IEnumerable<T>
         }
 
         var current = Head;
-        while (current.Next != null){
+        while (current.Next != null)
+        {
             current = current.Next;
         }
         current.Next = node;

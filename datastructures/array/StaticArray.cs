@@ -7,7 +7,7 @@ public class StaticArray<T> : IArray<T>, IEnumerable
 {
     protected T[] _innerArray;
 
-    public StaticArray(int size=4)
+    public StaticArray(int size = 4)
     {
         _innerArray = new T[size];
     }

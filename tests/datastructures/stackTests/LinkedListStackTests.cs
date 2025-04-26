@@ -9,7 +9,7 @@ public class LinkedListStackTests
     {
         // arrange
         var stack = new LinkedListStack<int>();
-        
+
         // act
         stack.Push(1);
         stack.Push(2);
@@ -47,7 +47,7 @@ public class LinkedListStackTests
         stack.Push("Can");
 
         var result = stack.Peek();
-       
+
 
         // Assert
         Assert.Equal(3, stack.Count);

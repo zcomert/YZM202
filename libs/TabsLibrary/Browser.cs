@@ -5,19 +5,17 @@ namespace TabsLibrary
 {
     public class Browser : IEnumerable
     {
-        private DoublyLinkedList<Tab> browserList;
+        private readonly DoublyLinkedList<Tab> browserList;
 
         public Browser()
         {
             browserList = new DoublyLinkedList<Tab>();
         }
 
-        public Browser(IEnumerable items)
+        public Browser(IEnumerable items) : this()
         {
             foreach (Tab item in items)
-            {
                 Add(item);
-            }
         }
 
         public void Add(Tab item)
@@ -36,7 +34,7 @@ namespace TabsLibrary
             var temp = browserList.Head;
             while (temp != null)
             {
-                if (temp.Value.Id.Equals(index))
+                if (temp.Value is not null && temp.Value.Id.Equals(index))
                     return temp.Value;
                 temp = temp.Next;
             }
