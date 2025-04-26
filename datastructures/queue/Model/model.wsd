@@ -1,0 +1,43 @@
+@startuml
+title Queue
+
+package "DataStructures.Queue.Contract" {
+    interface IQueue<T> {
+        + Count: int
+        + Enqueue(item: T): void
+        + Dequeue(): T
+        + Peek(): T
+    }
+}
+
+package "DataStructures.Queue" {
+    class Queue<T> {
+        - _queue: IQueue<T>
+        + Count: int
+        + Enqueue(item: T): void
+        + Dequeue(): T
+        + Peek(): T
+    }
+
+    class LinkedListQueue<T> {
+        - linkedlistqueue: DoublyLinkedList<T>
+        + Count: int
+        + Enqueue(item: T): void
+        + Dequeue(): T
+        + Peek(): T
+    }
+
+    class ArrayQueue<T> {
+        - _innerArray: Array<T>
+        + Count: int
+        + Enqueue(item: T): void
+        + Dequeue(): T
+        + Peek(): T
+    }
+}
+
+DataStructures.Queue.Queue .up.|> DataStructures.Queue.Contract.IQueue : "<<implements>>"
+DataStructures.Queue.LinkedListQueue .up.|> DataStructures.Queue.Contract.IQueue : "<<implements>>"
+DataStructures.Queue.ArrayQueue .up.|> DataStructures.Queue.Contract.IQueue : "<<implements>>"
+
+@enduml
