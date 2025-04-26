@@ -53,3 +53,34 @@
    - Expression evaluation and syntax parsing.  
    - Backtracking algorithms (e.g., maze solving, undo operations).  
    - Depth-First Search (DFS) in graph traversal.  
+
+## 5. Queue
+
+### 1. Introduction and Basic Concepts
+- Understanding the FIFO (First-In, First-Out) principle that defines a queue.
+- Real-world analogies such as queues in supermarkets or print job scheduling.
+- Importance in algorithm design, scheduling, and resource management.
+
+### 2. Queue Structure
+- Explanation of the internal structure of a queue.
+- Common implementations using arrays, linked lists, and circular buffers.
+- Core components: `enqueue`, `dequeue`, `peek`, and `isEmpty` operations.
+
+### 3. Queue Operations
+- **Enqueue** - Adding an element to the rear (end) of the queue.
+- **Dequeue** - Removing an element from the front of the queue.
+- **Peek (or Front)** - Viewing the front element without removing it.
+- **IsEmpty** - Checking if the queue is empty.
+- **Size** - Getting the number of elements currently stored in the queue.
+
+### 4. Memory Management in Queue
+- Dynamic vs. static memory allocation for queues.
+- Circular queue implementations to optimize space utilization.
+- Buffer overflow/underflow issues and preventive mechanisms.
+
+### 5. Application Areas of Queues
+- Scheduling processes in operating systems (CPU scheduling, IO queues).
+- Managing print jobs in printers (print spooling).
+- Breadth-First Search (BFS) in graph traversal.
+- Simulation systems (e.g., customer service systems, traffic flow models).
+- Message queues in distributed systems and asynchronous programming.
