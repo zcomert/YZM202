@@ -74,6 +74,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "queue", "datastructures\que
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "queueTests", "tests\datastructures\queueTests\queueTests.csproj", "{7EE72CAC-A6AB-42DB-83CD-E853F1D1879D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskScheduling", "problems\TaskScheduling\TaskScheduling.csproj", "{1FA27B63-664E-4D79-86F1-56059F03F0B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,7 @@ Global
 		{851BA443-773B-47B1-9215-37418D25E540} = {7DEBC5D8-541D-40E3-9D39-C3719D6817B1}
 		{577CF746-F0AF-4F5E-81CB-BE32D3F45AB7} = {72611903-65CF-4487-97AD-6B1C559E9236}
 		{7EE72CAC-A6AB-42DB-83CD-E853F1D1879D} = {15374FB2-5631-4716-A637-B7B0E74B8B99}
+		{1FA27B63-664E-4D79-86F1-56059F03F0B5} = {201838C3-AAAB-49BF-9944-AEDDDD8B16D2}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{577CF746-F0AF-4F5E-81CB-BE32D3F45AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -123,5 +126,9 @@ Global
 		{7EE72CAC-A6AB-42DB-83CD-E853F1D1879D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EE72CAC-A6AB-42DB-83CD-E853F1D1879D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EE72CAC-A6AB-42DB-83CD-E853F1D1879D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FA27B63-664E-4D79-86F1-56059F03F0B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FA27B63-664E-4D79-86F1-56059F03F0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FA27B63-664E-4D79-86F1-56059F03F0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FA27B63-664E-4D79-86F1-56059F03F0B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
