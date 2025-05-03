@@ -84,3 +84,39 @@
 - Breadth-First Search (BFS) in graph traversal.
 - Simulation systems (e.g., customer service systems, traffic flow models).
 - Message queues in distributed systems and asynchronous programming.
+
+## 6. Sorting Algorithms
+
+### 1. Introduction to Sorting Algorithms
+- Importance of sorting in computer science.
+- Comparison of different sorting techniques based on time complexity, space complexity, and stability.
+
+### 2. Bubble Sort
+- Simple comparison-based algorithm.
+- Repeatedly swaps adjacent elements if they are in the wrong order.
+- **Best case**: O(n), **Worst case**: O(n²), **Space**: O(1).
+
+### 3. Insertion Sort
+- Builds the final sorted array one element at a time.
+- Good for small or nearly sorted datasets.
+- **Best case**: O(n), **Worst case**: O(n²), **Space**: O(1).
+
+### 4. Selection Sort
+- Repeatedly finds the minimum element and moves it to the sorted portion.
+- Always O(n²) time complexity.
+- Not stable but simple to implement.
+
+### 5. Merge Sort
+- Divide-and-conquer algorithm that divides the list into halves, sorts them, and merges.
+- **Time complexity**: O(n log n) in all cases.
+- **Space complexity**: O(n).
+
+### 6. Quick Sort
+- Divide-and-conquer algorithm that picks a pivot and partitions the array.
+- **Best/Average case**: O(n log n), **Worst case**: O(n²) (can be improved with randomized pivot).
+- **Space**: O(log n) due to recursion stack.
+
+### 7. `Sorting.cs` - Main Controller
+- Central entry point to call and compare different sorting methods.
+- Useful for benchmarking or switching between algorithms dynamically.
+
