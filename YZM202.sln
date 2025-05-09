@@ -85,6 +85,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Shared\Utiliti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorithmsTests", "tests\SortingAlgorithmsTests\SortingAlgorithmsTests.csproj", "{023079C4-B876-4E81-B9E4-B53E474A8B25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAPI", "SortingAPI\SortingAPI.csproj", "{170F0A92-8D57-40B6-BB3A-9D693E0F5750}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -227,6 +229,10 @@ Global
 		{023079C4-B876-4E81-B9E4-B53E474A8B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{023079C4-B876-4E81-B9E4-B53E474A8B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{023079C4-B876-4E81-B9E4-B53E474A8B25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{170F0A92-8D57-40B6-BB3A-9D693E0F5750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{170F0A92-8D57-40B6-BB3A-9D693E0F5750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{170F0A92-8D57-40B6-BB3A-9D693E0F5750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{170F0A92-8D57-40B6-BB3A-9D693E0F5750}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -265,5 +271,9 @@ Global
 		{1FA27B63-664E-4D79-86F1-56059F03F0B5} = {201838C3-AAAB-49BF-9944-AEDDDD8B16D2}
 		{E6F7D4E2-4B02-4581-BF87-92D7A612302B} = {47955DA1-630C-424A-A159-5B206914D03B}
 		{023079C4-B876-4E81-B9E4-B53E474A8B25} = {7DEBC5D8-541D-40E3-9D39-C3719D6817B1}
+		{170F0A92-8D57-40B6-BB3A-9D693E0F5750} = {201838C3-AAAB-49BF-9944-AEDDDD8B16D2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA0D135B-B5AF-40F8-87CB-A281A18A4771}
 	EndGlobalSection
 EndGlobal

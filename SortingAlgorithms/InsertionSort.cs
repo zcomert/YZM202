@@ -6,7 +6,7 @@ public class InsertionSort
 {
     public static T[] Sort<T>(T[] array,
         SortDirection sortDirection = SortDirection.Asceding)
-        where T : IComparable
+        where T : IComparable<T>
     {
         var comparer = new CustomComparer<T>(sortDirection, Comparer<T>.Default);
         for (int i = 0; i < array.Length - 1; i++)

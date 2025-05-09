@@ -1,0 +1,6 @@
+@SortingAPI_HostAddress = http://localhost:5262
+
+GET {{SortingAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
