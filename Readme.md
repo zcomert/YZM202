@@ -116,7 +116,50 @@
 - **Best/Average case**: O(n log n), **Worst case**: O(n²) (can be improved with randomized pivot).
 - **Space**: O(log n) due to recursion stack.
 
-### 7. `Sorting.cs` - Main Controller
-- Central entry point to call and compare different sorting methods.
-- Useful for benchmarking or switching between algorithms dynamically.
+## 7. Algorithm Analysis Techniques
 
+### 1. Time Complexity
+- Time complexity describes how the runtime of an algorithm increases with the size of the input.
+- Helps evaluate the efficiency of algorithms.
+- Common complexities:
+  - **O(1)** – Constant time
+  - **O(log n)** – Logarithmic time
+  - **O(n)** – Linear time
+  - **O(n log n)** – Linearithmic time
+  - **O(n²)** – Quadratic time
+  - **O(2ⁿ), O(n!)** – Exponential time
+
+### 2. Asymptotic Notation
+- Used to describe the upper, lower, or tight bound behavior of an algorithm:
+  - **Big O (O)** – Worst-case upper bound  
+    Example: O(n²) means the runtime grows at most as n².
+  - **Big Omega (Ω)** – Best-case lower bound  
+    Example: Ω(n) means the algorithm takes at least linear time.
+  - **Big Theta (Θ)** – Tight bound (both upper and lower)  
+    Example: Θ(n log n) means the runtime grows exactly at that rate.
+
+### 3. Substitution Method
+- A method to solve recurrence relations by guessing the form of the solution and proving it using mathematical induction.
+- **Example:**
+  - T(n) = 2T(n/2) + n  
+  - Guess: T(n) = O(n log n)  
+  - Prove the guess using induction.
+
+### 4. Iteration Method
+- Solves recurrence relations by expanding them step by step until a pattern is observed.
+- **Example:**
+  - T(n) = T(n/2) + n  
+  - T(n/2) = T(n/4) + n/2  
+  - …
+  - Total = n + n/2 + n/4 + … = O(n)
+
+### 5. Master Theorem
+- Provides a direct way to analyze the time complexity of divide-and-conquer algorithms.
+- Applies to recurrences of the form:  
+  **T(n) = aT(n/b) + f(n)**  
+- **Cases:**
+  1. If f(n) = O(n^log_b(a - ε)) → T(n) = Θ(n^log_b(a))
+  2. If f(n) = Θ(n^log_b(a)) → T(n) = Θ(n^log_b(a) * log n)
+  3. If f(n) = Ω(n^log_b(a + ε)) and regularity condition holds → T(n) = Θ(f(n))
+- **Example:**
+  - Merge Sort: T(n) = 2T(n/2) + n → Case 2 → Θ(n log n)
