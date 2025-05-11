@@ -163,3 +163,46 @@
   3. If f(n) = Ω(n^log_b(a + ε)) and regularity condition holds → T(n) = Θ(f(n))
 - **Example:**
   - Merge Sort: T(n) = 2T(n/2) + n → Case 2 → Θ(n log n)
+
+
+  ## 8. Tree, Binary Tree, Binary Search Tree
+
+### 1. Tree
+- A **tree** is a hierarchical data structure consisting of nodes.
+- The top node is called the **root**; nodes without children are called **leaves**.
+- Each node (except the root) has exactly one parent.
+- Trees are used in many applications like file systems, databases, and parsing expressions.
+- **Terminology:**
+  - **Parent, Child, Sibling**
+  - **Subtree**: A tree formed by a node and its descendants.
+  - **Depth**: Number of edges from root to node.
+  - **Height**: Number of edges on the longest path from node to a leaf.
+
+### 2. Binary Tree
+- A **binary tree** is a tree where each node has at most two children: **left** and **right**.
+- Types of binary trees:
+  - **Full Binary Tree**: Every node has 0 or 2 children.
+  - **Complete Binary Tree**: All levels are filled except possibly the last, which is filled from left to right.
+  - **Perfect Binary Tree**: All internal nodes have two children and all leaves are at the same level.
+- Common traversals:
+  - **Inorder (Left, Root, Right)**
+  - **Preorder (Root, Left, Right)**
+  - **Postorder (Left, Right, Root)**
+  - **Level-order (Breadth-First Search)**
+
+### 3. Binary Search Tree (BST)
+- A **Binary Search Tree** is a binary tree with the property:
+  - For any node `n`:  
+    - All values in the left subtree < `n.value`  
+    - All values in the right subtree > `n.value`
+- Operations:
+  - **Search**: O(h) time complexity (h = tree height)
+  - **Insert**: O(h)
+  - **Delete**: O(h)
+- Best case: **Balanced BST** → O(log n)  
+- Worst case: **Unbalanced BST** (like a linked list) → O(n)
+- BSTs are used in:
+  - Dynamic sets
+  - Searching and sorting
+  - Dictionary implementations
+
