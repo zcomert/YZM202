@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\array\array.csproj" />
+    <ProjectReference Include="..\..\Shared\Utilities\Utilities.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
