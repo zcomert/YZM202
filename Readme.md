@@ -286,3 +286,66 @@
 - **Image segmentation** in computer vision
 - **Network connectivity** checking
 - **Cycle detection** in undirected graphs
+
+## 10. Graph (Graf)
+
+### 1. Graph Nedir?
+- Bir **Graph (Graf)**, **düğümler (nodes / vertices)** ve bu düğümler arasındaki **kenarlardan (edges)** oluşan bir veri yapısıdır.
+- Temel graf türleri:
+  - **Directed Graph (Yönlü Graf)**: Kenarlar yönlüdür. Örnek: `A → B`
+  - **Undirected Graph (Yönsüz Graf)**: Kenarlar çift yönlüdür. Örnek: `A — B`
+  - **Weighted Graph (Ağırlıklı Graf)**: Kenarlara sayısal ağırlıklar atanır. Örnek: `A —(3)— B`
+
+### 2. Graph Temsili
+
+| Temsil Şekli         | Açıklama                                                                 | Bellek Karmaşıklığı |
+|----------------------|--------------------------------------------------------------------------|----------------------|
+| **Adjacency Matrix** | NxN matris, `matrix[i][j] = 1` ise `i`'den `j`'ye kenar vardır            | O(V²)                |
+| **Adjacency List**   | Her düğüm için bir liste, sadece bağlı düğümler tutulur                   | O(V + E)             |
+| **Edge List**        | Tüm kenarlar (ve gerekirse ağırlıkları) `(u, v)` ya da `(u, v, w)` şeklinde tutulur | O(E)       |
+
+> 🔹 `V`: Düğüm sayısı (vertex), `E`: Kenar sayısı (edge)
+
+### 3. Temel İşlemler ve Karmaşıklıklar
+
+| İşlem                   | Açıklama                                                   | Liste (Adj. List) | Matris (Adj. Matrix) |
+|------------------------|------------------------------------------------------------|-------------------|----------------------|
+| `AddVertex(v)`         | Yeni bir düğüm ekler                                       | O(1)              | O(V²) (yeniden yapılandırma) |
+| `AddEdge(u, v)`        | İki düğüm arasında kenar oluşturur                         | O(1)              | O(1)                 |
+| `RemoveEdge(u, v)`     | Kenarı siler                                               | O(E)              | O(1)                 |
+| `HasEdge(u, v)`        | Kenar olup olmadığını kontrol eder                         | O(E) / O(1)       | O(1)                 |
+| `Neighbors(v)`         | Komşu düğümleri döner                                      | O(degree(v))      | O(V)                 |
+| `DFS / BFS`            | Derinlik veya genişlik öncelikli arama                     | O(V + E)          | O(V²)                |
+
+### 4. Graf Türleri
+
+| Tür                   | Özellikler                                                                 |
+|-----------------------|----------------------------------------------------------------------------|
+| **Directed Graph**     | Kenarların yönü vardır (`u → v`)                                           |
+| **Undirected Graph**   | Kenarlar çift yönlüdür (`u — v`)                                           |
+| **Weighted Graph**     | Kenarlar ağırlıklıdır (`u —[w]→ v`)                                        |
+| **Cyclic / Acyclic**   | Döngü içeren veya içermeyen grafikler                                     |
+| **Connected / Disconnected** | Tüm düğümler birbirine bağlıysa bağlı (connected) olarak adlandırılır   |
+
+### 5. Uygulamalar
+
+- **Yol bulma algoritmaları** (Dijkstra, A*, Bellman-Ford)
+- **Minimum Spanning Tree** (Kruskal, Prim)
+- **Topolojik sıralama**
+- **Sosyal ağ analizleri**
+- **İletişim ağları**
+- **Görüntü işleme** (bölge etiketleme, segmentasyon)
+- **Veri akışı ve planlama sistemleri**
+
+### 6. Önemli Grafik Algoritmaları
+
+| Algoritma             | Kullanım Alanı                               |
+|-----------------------|----------------------------------------------|
+| **DFS / BFS**         | Bağlı bileşen bulma, yol kontrolü            |
+| **Dijkstra**          | Tek kaynaklı en kısa yol                     |
+| **Bellman-Ford**      | Negatif ağırlık destekli en kısa yol         |
+| **Floyd-Warshall**    | Tüm çiftler arasında en kısa yollar          |
+| **Kruskal / Prim**    | Minimum Spanning Tree (MST)                 |
+| **Topological Sort**  | Bağımlı görev planlaması (DAG yapıları)      |
+| **Tarjan / Kosaraju** | Strongly Connected Components (SCC) tespiti  |
+
