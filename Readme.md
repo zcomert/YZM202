@@ -253,3 +253,36 @@
   - **Heap Sort**
   - **Priority queues**
   - **Finding the k largest elements**
+
+## 9. Disjoint Set (Union-Find)
+
+### 1. Disjoint Set
+- A **Disjoint Set** (also known as **Union-Find**) is a data structure that keeps track of a partition of elements into **disjoint (non-overlapping) subsets**.
+- It provides efficient support for the following operations:
+  - **MakeSet(x)**: Creates a set containing a single element `x`.
+  - **FindSet(x)**: Returns the representative (or "leader") of the set that contains `x`.
+  - **Union(x, y)**: Merges the sets containing elements `x` and `y`.
+
+### 2. Disjoint Set Representation
+- Internally, each set is represented as a **tree**, with each node pointing to its **parent**.
+- The **representative** of a set is the **root** of its tree.
+- Optimizations:
+  - **Path Compression**: Flattens the structure of the tree whenever `FindSet` is called, speeding up future queries.
+  - **Union by Rank / Size**: Always attach the smaller tree to the root of the larger one to keep trees shallow.
+
+### 3. Operations and Complexity
+
+| Operation      | Description                                | Time Complexity |
+|----------------|--------------------------------------------|-----------------|
+| `MakeSet(x)`   | Initializes a new set with element `x`     | O(1)            |
+| `FindSet(x)`   | Returns the root of the set containing `x` | O(α(n))         |
+| `Union(x, y)`  | Merges the sets containing `x` and `y`     | O(α(n))         |
+
+> 🔹 Here, `α(n)` is the **inverse Ackermann function**, which grows extremely slowly. For all practical values of `n`, it is ≤ 5.
+
+### 4. Applications
+- **Kruskal’s algorithm** for finding the **Minimum Spanning Tree**
+- **Connected component detection** in graphs
+- **Image segmentation** in computer vision
+- **Network connectivity** checking
+- **Cycle detection** in undirected graphs
