@@ -206,3 +206,50 @@
   - Searching and sorting
   - Dictionary implementations
 
+
+## 9. Heap, Binary Heap, Min Heap, Max Heap
+
+### 1. Heap
+- A **heap** is a special **tree-based** data structure that satisfies the **heap property**.
+- It is usually implemented as a **complete binary tree**.
+- **Heap property**:
+  - In a **Max Heap**: Parent node ≥ Children
+  - In a **Min Heap**: Parent node ≤ Children
+- Common uses:
+  - **Priority queues**
+  - **Heap Sort**
+  - **Task scheduling**
+
+### 2. Binary Heap
+- A **binary heap** is a **complete binary tree** that satisfies the **heap property**.
+- Typically implemented using an **array**:
+  - For a node at index `i`:
+    - Left child → `2i + 1`
+    - Right child → `2i + 2`
+    - Parent → `(i - 1) / 2`
+
+### 3. Min Heap
+- A **Min Heap** is a binary heap where:
+  - The **root** contains the **smallest** element.
+  - Each parent node ≤ its children.
+- Operations:
+  - **Insert**: O(log n)
+  - **Extract-Min**: O(log n)
+  - **Peek-Min**: O(1)
+- Applications:
+  - **Dijkstra’s algorithm**
+  - **Minimum spanning tree (Prim’s algorithm)**
+  - **Event simulation**
+
+### 4. Max Heap
+- A **Max Heap** is a binary heap where:
+  - The **root** contains the **largest** element.
+  - Each parent node ≥ its children.
+- Operations:
+  - **Insert**: O(log n)
+  - **Extract-Max**: O(log n)
+  - **Peek-Max**: O(1)
+- Applications:
+  - **Heap Sort**
+  - **Priority queues**
+  - **Finding the k largest elements**
