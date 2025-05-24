@@ -63,8 +63,8 @@ public abstract class BHeap<T> : IEnumerable<T>
 
     public void Add(T value)
     {
-        //if (position == Array.Length)
-        //    throw new IndexOutOfRangeException("Overflow!");
+        if (position == Array.Length)
+           throw new IndexOutOfRangeException("Overflow!");
         Array.SetValue(value, position);
         position++;
         Count++;
@@ -88,7 +88,7 @@ public abstract class BHeap<T> : IEnumerable<T>
 
     public IEnumerator<T> GetEnumerator()
     {
-        return Array.ToList().Take(position).GetEnumerator();
+        return Array.Take(position).GetEnumerator();
     }
 
     IEnumerator IEnumerable.GetEnumerator()

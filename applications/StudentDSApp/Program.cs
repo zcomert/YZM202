@@ -6,7 +6,8 @@ var studentArray = new Array<Student>(
 [
     new("Ali", "Dag", 0),
     new("Veli", "Akif", 1),
-    new("Emir", "Ozkale", 2)
+    new("Emir", "Ozkale", 2),
+    new("Can", "Kaleli", 2),
 ]);
 
 Console.WriteLine("Array Student 2: " + studentArray[1].FullName);
@@ -31,3 +32,6 @@ while (temp != null)
 }
 
 Console.WriteLine("Linked List Student 2: " + temp?.Value?.FullName);
+
+var list = studentArray.ToList();
+list.ForEach(c => System.Console.WriteLine(c));

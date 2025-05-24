@@ -3,7 +3,7 @@ using DataStructures.Array.Contracts;
 
 namespace DataStructures.Array;
 
-public class StaticArray<T> : IArray<T>, IEnumerable
+public class StaticArray<T> : IArray<T>, IEnumerable<T>
 {
     protected T[] _innerArray;
 
@@ -46,5 +46,10 @@ public class StaticArray<T> : IArray<T>, IEnumerable
     {
         if (index < 0 || index >= _innerArray.Length)
             throw new IndexOutOfRangeException();
+    }
+
+    IEnumerator<T> IEnumerable<T>.GetEnumerator()
+    {
+        return new ArrayEnumerator<T>(_innerArray);
     }
 }
