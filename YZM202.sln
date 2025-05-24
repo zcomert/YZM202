@@ -93,6 +93,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trees", "datastructures\tre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "treeTests", "tests\datastructures\treeTests\treeTests.csproj", "{EECC08B9-8CA3-485D-81C1-E59383B8A828}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "priorityQueue", "datastructures\priorityQueue\priorityQueue.csproj", "{125B9C09-7342-4AD6-977A-EA44787938C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -251,6 +253,10 @@ Global
 		{EECC08B9-8CA3-485D-81C1-E59383B8A828}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EECC08B9-8CA3-485D-81C1-E59383B8A828}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EECC08B9-8CA3-485D-81C1-E59383B8A828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{125B9C09-7342-4AD6-977A-EA44787938C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125B9C09-7342-4AD6-977A-EA44787938C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125B9C09-7342-4AD6-977A-EA44787938C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125B9C09-7342-4AD6-977A-EA44787938C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -293,6 +299,7 @@ Global
 		{2B815E4E-0DB0-4F20-AC0E-007C2F8EAB03} = {E1ED030F-CE98-4098-B589-40BE93D653D3}
 		{21F10686-354A-4F5E-BEBF-CE679BA53FA9} = {72611903-65CF-4487-97AD-6B1C559E9236}
 		{EECC08B9-8CA3-485D-81C1-E59383B8A828} = {15374FB2-5631-4716-A637-B7B0E74B8B99}
+		{125B9C09-7342-4AD6-977A-EA44787938C8} = {72611903-65CF-4487-97AD-6B1C559E9236}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA0D135B-B5AF-40F8-87CB-A281A18A4771}

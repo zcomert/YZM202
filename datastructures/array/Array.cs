@@ -143,4 +143,14 @@ public class Array<T> : StaticArray<T>, IDynamicArray<T>
             _innerArray = newArray;
         }
     }
+
+    public List<T> ToList()
+    {
+        var list = new List<T>();
+        for (int i = 0; i < Count; i++)
+        {
+            list.Add(_innerArray[i]);
+        }
+        return list;
+    }
 }
